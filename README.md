@@ -22,6 +22,6 @@ Executing the tests sequentially, the total execution time is around 5 minutes (
 
 This example is using parallelization level 5 which basically means that the whole test suite is split to 5 sub suites. When the split is done optimally, one sub suite contains 6 fast tests (around 10 seconds per test) and the other 4 sub suites contain one test which each take around 60 seconds to execute. Which means that all tests could finish in around 1 minute.
 
-![](https://user-images.githubusercontent.com/22433243/166979674-7eaec742-3a2d-4cb1-8f6d-57d36e18509d.png)
+![](https://user-images.githubusercontent.com/22433243/167121299-a69c9ef2-20cb-46a1-8858-1c43e55cc291.png)
 
-_Note: The parellelism seems to only work until pytest-split==0.1.6, newest version return an [exit code 5](https://github.com/jerry-git/pytest-split/issues/26), no tests detected._
+_Note: The parellelism seems to only work using **pytest-split** with the flag `--splitting-algorithm least_duration` to have at least one test in each sub-groups._
